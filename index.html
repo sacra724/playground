@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="TechnoTodoApp" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	<title>TODO</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="TodoController as self">
+	<form ng-submit="self.addTask()">
+		<input type="text" ng-model="self.taskTitle" placeholder="add a task." required>
+		<button type="submit">add</button>
+	</form>
+	<ul>
+		<li ng-click="self.changeFilter(false)" ng-class="{active: self.currentFilter == false}">
+			TODO
+		</li>
+		<li ng-click="self.changeFilter(true)" ng-class="{active: self.currentFilter == true}">
+			DONE
+		</li>
+<!-- 		<li ng-click="self.changeFilter(null)" ng-class="{active: !self.currentFilter}">
+			ALL
+		</li> -->
+	</ul>
+	<ul>
+		<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}">
+			<form>
+				<label>
+					<input type="checkbox" ng-model="task.done">
+					<span >{{ task.title }}</span>
+				</label>
+				<button type="reset">delete</button>
+			</form>
+		</li>
+	</ul>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
