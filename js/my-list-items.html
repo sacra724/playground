@@ -1,0 +1,10 @@
+<ul>
+	<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}">
+		<form>
+			<label>
+				<input type="checkbox" ng-model="task.done">
+				<span >{{ task.title }}</span>
+			</label>
+		</form>
+	</li>
+</ul>

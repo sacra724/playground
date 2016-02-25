@@ -24,21 +24,16 @@
 				DONE
 			</button>
 		</li>
-<!-- 		<li ng-click="self.changeFilter(null)" ng-class="{active: !self.currentFilter}">
-			ALL
-		</li> -->
-	</ul>
-	タスク
-	<ul>
-		<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}">
-			<form>
-				<label>
-					<input type="checkbox" ng-model="task.done">
-					<span >{{ task.title }}</span>
-				</label>
-			</form>
+		<li ng-click="self.changeFilter('')" ng-class="{active: !self.currentFilter}">
+			<button type="">
+				ALL
+			</button>
 		</li>
 	</ul>
+	タスク
+		<ul>
+			<my-list-items></my-list-items>
+		</ul>
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>

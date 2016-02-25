@@ -7,16 +7,14 @@ todoApp.controller('TodoController', function()
 	var self = this;
 
 	self.init = function(){
-		//set currentFilter as null
-		self.currentFilter = false;
-		console.log(self.currentFilter);
+		self.currentFilter = '';
 		//generate new task array
 		self.tasks = [];
 		//set taskTitle as ''
 		self.taskTitle = '';
 	}
 
-	//add a new task method
+	//method: add a new task
 	self.addTask = function(){
 		self.tasks.push({
 			title: self.taskTitle,
@@ -32,11 +30,18 @@ todoApp.controller('TodoController', function()
 		incomplete: { done: false }
 	};
 
-	//change urrentFilter method
+	//method: change currentFilter
 	self.changeFilter = function(filter){
 		self.currentFilter = filter;
 		console.log(self.currentFilter);
 	};
 
 	self.init()
+});
+
+todoApp.directive('myListItems', function(){
+	return {
+		restrict: 'CAE',
+		templateUrl: '../app/components/my-list-items.html'
+	};
 });
