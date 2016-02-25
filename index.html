@@ -7,21 +7,28 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-controller="TodoController as self">
+	タスクの追加
 	<form ng-submit="self.addTask()">
 		<input type="text" ng-model="self.taskTitle" placeholder="add a task." required>
 		<button type="submit">add</button>
 	</form>
+	フィルタ
 	<ul>
 		<li ng-click="self.changeFilter(false)" ng-class="{active: self.currentFilter == false}">
-			TODO
+			<button type="">
+				TODO
+			</button>
 		</li>
 		<li ng-click="self.changeFilter(true)" ng-class="{active: self.currentFilter == true}">
-			DONE
+			<button type="">
+				DONE
+			</button>
 		</li>
 <!-- 		<li ng-click="self.changeFilter(null)" ng-class="{active: !self.currentFilter}">
 			ALL
 		</li> -->
 	</ul>
+	タスク
 	<ul>
 		<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}">
 			<form>
@@ -29,7 +36,6 @@
 					<input type="checkbox" ng-model="task.done">
 					<span >{{ task.title }}</span>
 				</label>
-				<button type="reset">delete</button>
 			</form>
 		</li>
 	</ul>
