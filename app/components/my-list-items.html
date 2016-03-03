@@ -1,8 +1,8 @@
-<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}">
+<li ng-repeat="task in self.tasks | filter: self.currentFilter" ng-class="{done: task.done}" class="fade">
 	<form>
+		<input type="checkbox" ng-model="task.done">
 		<label>
-			<input type="checkbox" ng-model="task.done">
-			<span >{{ task.title }}</span>
+			{{ task.title }}
 		</label>
 	</form>
 </li>

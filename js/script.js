@@ -1,18 +1,16 @@
-var todoApp = angular.module('TechnoTodoApp', []);
+var todoApp = angular.module('TechnoTodoApp', ['ngAnimate','ngCookies']);
 
-todoApp.controller('TodoController', function()
+todoApp.controller('TodoController', ['$cookies', function($cookies)
 {
 	'use strict';
 
 	var self = this;
 
 	self.init = function(){
-		self.currentFilter = '';
-		//generate new task array
-		self.tasks = [];
-		//set taskTitle as ''
-		self.taskTitle = '';
-	}
+		self.currentFilter = undefined ;
+		self.tasks = new Array; //generate new task array
+		self.taskTitle = ''; //set taskTitle empty
+	};
 
 	//method: add a new task
 	self.addTask = function(){
@@ -20,24 +18,34 @@ todoApp.controller('TodoController', function()
 			title: self.taskTitle,
 			done: false
 		});
-		//reset input title
-		self.taskTitle = '';
-	};
 
-	//Filitering model
-	self.filter = {
-		done: { done: true },
-		incomplete: { done: false }
+		// $cookies.put(
+		// 		'title', 'self.taskTitle'
+		// 	);
+		// $cookies.put(
+		// 		'state', 'task.done'
+		// 	);
+		//reset input title
+
+		self.taskTitle = '';
+
+		// console.log($cookies.get("title"));
+		// console.log($cookies.get("state"));
+
 	};
 
 	//method: change currentFilter
 	self.changeFilter = function(filter){
 		self.currentFilter = filter;
 		console.log(self.currentFilter);
+
+		$cookies.put("CurrentFilter", self.currentFilter);
+		console.log($cookies.get("CurrentFilter"));
 	};
 
-	self.init()
-});
+	self.init();
+}]);
+
 
 todoApp.directive('myListItems', function(){
 	return {

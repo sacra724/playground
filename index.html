@@ -14,27 +14,29 @@
 	</form>
 	フィルタ
 	<ul class="task-filter">
-		<li ng-click="self.changeFilter(false)" ng-class="{active: self.currentFilter == false}">
+		<li ng-click="self.changeFilter(false)" ng-class="{active: self.currentFilter == false }">
 			<button type="">
 				TODO
 			</button>
 		</li>
-		<li ng-click="self.changeFilter(true)" ng-class="{active: self.currentFilter == true}">
+		<li ng-click="self.changeFilter(true)" ng-class="{active: self.currentFilter == true }">
 			<button type="">
 				DONE
 			</button>
 		</li>
-		<li ng-click="self.changeFilter('')" ng-class="{active: !self.currentFilter}">
+		<li ng-click="self.changeFilter(undefined)" ng-class="{active: self.currentFilter ==  undefined }">
 			<button type="">
 				ALL
 			</button>
 		</li>
 	</ul>
-	タスク
-		<ul>
-			<my-list-items></my-list-items>
-		</ul>
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	タスク（ダブルクリックで編集）
+	<ul>
+		<my-list-items></my-list-items>
+	</ul>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
