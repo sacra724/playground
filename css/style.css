@@ -15,6 +15,7 @@ button, select {
 	background: none;
 	border: none;
 	border-radius: 0;
+	cursor: pointer;
 	outline: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -24,20 +25,28 @@ input {
 	border: 1px solid #000;
 }
 
-button {
+button[type=submit] {
 	padding: 4px;
 	border: 1px solid #333;
 }
 
-.task-filter li.active > button {
+.task-filter {
+	display: flex;
+}
+.task-filter > li {
+	flex-grow: 1;
+	margin: 0 4px;
+	padding: 4px;
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.task-filter > li.active {
 	background-color: #1b95e0;
 }
 
 li.done {
 	text-decoration: line-through;
-}
-
-ul.task-filter {
 }
 
 .fade.ng-enter {
