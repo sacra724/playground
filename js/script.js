@@ -8,30 +8,30 @@ todoApp.controller('TodoController', ['$cookies', function($cookies)
 
 	self.init = function(){
 		self.currentFilter = undefined ;
-		self.tasks = new Array; //generate new task array
+		self.tasks = []; //generate new task array
 		self.taskTitle = ''; //set taskTitle empty
 	};
 
 	//method: add a new task
 	self.addTask = function(){
+
+		var newTaskTitle = self.taskTitle;
+
+		for (var j in self.tasks){
+			var name = self.tasks[j]["title"];
+
+			if (newTaskTitle == name) {
+				alert("そのタスクは既に登録されています");
+				return false;
+			}
+		}
 		self.tasks.push({
 			title: self.taskTitle,
 			done: false
 		});
 
-		// $cookies.put(
-		// 		'title', 'self.taskTitle'
-		// 	);
-		// $cookies.put(
-		// 		'state', 'task.done'
-		// 	);
-		//reset input title
 
 		self.taskTitle = '';
-
-		// console.log($cookies.get("title"));
-		// console.log($cookies.get("state"));
-
 	};
 
 	//method: change currentFilter

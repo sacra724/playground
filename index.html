@@ -2,7 +2,7 @@
 <html ng-app="TechnoTodoApp" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>TODO</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -33,6 +33,12 @@
 	タスク（ダブルクリックで編集）
 	<ul>
 		<my-list-items></my-list-items>
+	</ul>
+	<hr>
+	<ul>
+		<li ng-repeat="(key, value) in self.tasks">
+			{{key}}：{{value}}
+		</li>
 	</ul>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
