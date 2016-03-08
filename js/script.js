@@ -14,7 +14,6 @@ todoApp.controller('TodoController', ['$cookies', function($cookies)
 
 	//method: add a new task
 	self.addTask = function(){
-
 		var newTaskTitle = self.taskTitle;
 
 		for (var j in self.tasks){
@@ -29,18 +28,20 @@ todoApp.controller('TodoController', ['$cookies', function($cookies)
 			title: self.taskTitle,
 			done: false
 		});
-
-
 		self.taskTitle = '';
 	};
 
 	//method: change currentFilter
-	self.changeFilter = function(filter){
-		self.currentFilter = filter;
-		console.log(self.currentFilter);
+	self.changeFilter = function(filter, tab){
+		var msg = tab + "を表示しますか？";
 
-		$cookies.put("CurrentFilter", self.currentFilter);
-		console.log($cookies.get("CurrentFilter"));
+		if (self.currentFilter == filter) {
+			return false;
+		} else {
+			if (window.confirm(msg)){
+				self.currentFilter = filter;
+			}
+		}
 	};
 
 	self.init();

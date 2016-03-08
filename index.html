@@ -14,17 +14,17 @@
 	</form>
 	フィルタ
 	<ul class="task-filter">
-		<li ng-click="self.changeFilter(false)" ng-class="{active: self.currentFilter == false }">
+		<li ng-click="self.changeFilter(false, 'TODO')" ng-class="{active: self.currentFilter == false }">
 			<button type="">
 				TODO
 			</button>
 		</li>
-		<li ng-click="self.changeFilter(true)" ng-class="{active: self.currentFilter == true }">
+		<li ng-click="self.changeFilter(true, 'DONE')" ng-class="{active: self.currentFilter == true }">
 			<button type="">
 				DONE
 			</button>
 		</li>
-		<li ng-click="self.changeFilter(undefined)" ng-class="{active: self.currentFilter ==  undefined }">
+		<li ng-click="self.changeFilter(undefined, 'ALL')" ng-class="{active: self.currentFilter ==  undefined }">
 			<button type="">
 				ALL
 			</button>
