@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>TODO</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
 <body ng-controller="TodoController as self">
 	タスクの追加
@@ -31,7 +31,7 @@
 		</li>
 	</ul>
 	タスク（ダブルクリックで編集）
-	<ul>
+	<ul class="task-list">
 		<my-list-items></my-list-items>
 	</ul>
 	<hr>
@@ -40,9 +40,7 @@
 			{{key}}：{{value}}
 		</li>
 	</ul>
-	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
-	<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="public/js/lib.js"></script>
+	<script type="text/javascript" src="public/js/script.js"></script>
 </body>
 </html>

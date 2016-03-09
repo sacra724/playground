@@ -1,0 +1,21 @@
+ul { margin: 0; padding: 0; list-style: none; }
+
+button, select { -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; margin: 0; padding: 0; background: none; border: none; border-radius: 0; cursor: pointer; outline: none; }
+
+input { border: 1px solid #000; }
+
+button[type=submit] { padding: 4px; border: 1px solid #333; }
+
+ul.task-filter { display: -webkit-box; display: -moz-box; display: box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
+
+ul.task-filter > li { -webkit-flex-grow: 1; -moz-flex-grow: 1; flex-grow: 1; -ms-flex-positive: 1; margin: 0 4px; padding: 4px; border: 1px solid #000; text-align: center; }
+
+.task-list li.active { background-color: #1b95e0; }
+
+.task-list li.done { text-decoration: line-through; }
+
+.fade.ng-enter { transition: 0.5s linear all; }
+
+.fade.ng-enter { opacity: 0; }
+
+.fade.ng-enter.ng-enter-active { opacity: 1; }
