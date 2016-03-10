@@ -26,7 +26,7 @@ button[type=submit] {
 	border: 1px solid #333;
 }
 
-ul.task-filter {
+ul.tab {
 	@include display(flex);
 	> li {
 		@include flex-grow(1);
@@ -36,7 +36,17 @@ ul.task-filter {
 		text-align: center;
 	}
 }
-.task-list {
+
+.tab-menu, .added-tasks {
+	margin-top: 40px;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.tab {
 	li.active {
 		background-color: #1b95e0;
 	}

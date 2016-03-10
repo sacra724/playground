@@ -6,13 +6,17 @@ input { border: 1px solid #000; }
 
 button[type=submit] { padding: 4px; border: 1px solid #333; }
 
-ul.task-filter { display: -webkit-box; display: -moz-box; display: box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
+ul.tab { display: -webkit-box; display: -moz-box; display: box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; }
 
-ul.task-filter > li { -webkit-flex-grow: 1; -moz-flex-grow: 1; flex-grow: 1; -ms-flex-positive: 1; margin: 0 4px; padding: 4px; border: 1px solid #000; text-align: center; }
+ul.tab > li { -webkit-flex-grow: 1; -moz-flex-grow: 1; flex-grow: 1; -ms-flex-positive: 1; margin: 0 4px; padding: 4px; border: 1px solid #000; text-align: center; }
 
-.task-list li.active { background-color: #1b95e0; }
+.tab-menu, .added-tasks { margin-top: 40px; }
 
-.task-list li.done { text-decoration: line-through; }
+.title { font-size: 18px; font-weight: bold; }
+
+.tab li.active { background-color: #1b95e0; }
+
+.tab li.done { text-decoration: line-through; }
 
 .fade.ng-enter { transition: 0.5s linear all; }
 
