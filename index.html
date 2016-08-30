@@ -7,46 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
 <body ng-controller="TodoController as self">
-	<div class="addtask">
-		<span class="title">タスクの追加</span>
-		<form ng-submit="self.taskAdd.add()">
-			<input type="text" ng-model="self.taskAdd.data.taskTitle" placeholder="add a task." required>
-			<button type="submit">add</button>
-		</form>
-	</div>
-	<div class="tab-menu">
-		<span class="title">フィルタ</span>
-		<ul class="tab">
-			<li ng-click="self.tab.change(undefined, 'ALL')" ng-class="{active: self.tab.data.state ==  undefined }">
-				<button type="">
-					ALL
-				</button>
-			</li>
-			<li ng-click="self.tab.change(false, 'TODO')" ng-class="{active: self.tab.data.state == false }">
-				<button type="">
-					TODO
-				</button>
-			</li>
-			<li ng-click="self.tab.change(true, 'DONE')" ng-class="{active: self.tab.data.state == true }">
-				<button type="">
-					DONE
-				</button>
-			</li>
-		</ul>
-	</div>
-	<div class="added-tasks">
-		<span class="title">タスク（ダブルクリックで編集）</span>
-		<ul class="task-list">
-			<my-list-items></my-list-items>
-		</ul>
-	</div>
-	<hr>
-	<p>タスクの状態監視</p>
-	<ul>
-		<li ng-repeat="(key, value) in self.taskAdd.data.tasks">
-			{{key}}：{{value}}
-		</li>
-	</ul>
+	<iframe src="http://c.leadi.techno/" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
 	<script type="text/javascript" src="public/js/lib.js"></script>
 	<script type="text/javascript" src="public/js/script.js"></script>
 </body>
